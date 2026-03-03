@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Neyr — Barbershop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <div class="nav-inner">
+            <a class="brand" href="#">
+                <span>NEYR</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="btn btn-primary nav-cta">Book Now</button>
+            <!-- hamburger menu for small screens -->
+            <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-inner">
+            <h1>NEYR</h1>
+            <h2>Barbershop · On‑location</h2>
+            <p class="hero-sub">Premium grooming delivered to your home. Clean cuts, attention to detail, no waiting rooms.</p>
+            <a class="btn btn-cta" href="#contact">Book Now</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="section about">
+            <div class="container">
+                <h3>About Us</h3>
+                <div class="flex">
+                    <p>At our barbershop, grooming isn’t just a service — it’s a personal experience. Founded and operated by a single dedicated barber, we bring professional haircuts directly to your home. No waiting rooms, no travel time — just focused, high-quality service in the comfort of your own space.</p>
+                    <img src="./src/about_us_edited.jpeg" alt="photo of a barber">
+                </div>
+                
+            </div>
+        </section>
+
+        <section id="services" class="section services">
+            <div class="container grid">
+                <article class="card">
+                    <div class="card-icon"><img src="./src/scissors_icon.png" alt="scissors icon" width="50" height="50"></div>
+                    <h4>Haircut</h4>
+                    <p>Expert fades, scissor work and classic trims.</p>
+                </article>
+                <article class="card">
+                    <div class="card-icon"><img src="./src/beard-trimming.png" alt="beard icon" width="50" height="50"></div>
+                    <h4>Beard</h4>
+                    <p>Beard trims, shaping and maintenance.</p>
+                </article>
+                <article class="card">
+                    <div class="card-icon">🚗</div>
+                    <h4>On-location fee</h4>
+                    <p>Convenience fee for home visits (transparent pricing).</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="portfolio" class="section portfolio">
+            <div class="container gallery">
+                <div class="thumb"><img src="./src/porfolio/guy_with_earing.jpeg" alt="haircut"></div>
+                <div class="thumb"><img src="./src/porfolio/hairy.jpeg" alt="haircut"></div>
+                <div class="thumb"><img src="./src/porfolio/blond.jpeg" alt="haircut"></div>
+                <div class="thumb"><img src="./src/porfolio/buzzcut.jpeg" alt="haircut"></div>
+                <div class="thumb"><img src="./src/porfolio/short_hair.jpeg" alt="haircut"></div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact">
+            <div class="container contact-inner">
+                <div>
+                    <h4>Location</h4>
+                    <p>Your Home — We come to you</p>
+                </div>
+                <div id="contact-info">
+                    <h4>Contact</h4>
+                    <p>Phone: +90 544 169 17 75</p>
+                    <p>Email: isasitabdiiev@gmail.com</p>
+                </div>
+                <div class="socials">
+                    <a href="https://www.instagram.com/isastb2025/" target="_blank" aria-label="Instagram"><img src="./src/instagram.png" alt="instagram icon" width="30" height="30"></a>
+                    <a href="https://web.telegram.org/k/#@Isasitab" target="_blank" aria-label="Telegram"><img src="./src/telegram.png" alt="telegram icon" width="30" height="30"></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">© <span id="year"></span> Neyr — Barbershop</div>
+    </footer>
+
+    <script src="src/theme.js"></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+    <script>
+        // mobile nav toggle logic
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        navToggle && navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>

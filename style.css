@@ -1,0 +1,158 @@
+:root{
+	--primary: #222222;
+	--accent: #e0a84a;
+	--bg: #0f0f10;
+	--muted: #9aa0a6;
+	--card: rgba(255,255,255,0.04);
+	--glass: rgba(255,255,255,0.06);
+	--text: #ffffff;
+}
+
+*{
+    box-sizing:border-box
+}
+html,body{
+    height:100%;
+    margin:0;
+    font-family:'Poppins',system-ui,Arial,sans-serif;
+    color:var(--text);
+    background-color: #0f0f10;
+}
+
+.container{max-width:1100px;margin:0 auto;padding:2rem}
+.site-nav{position:sticky;top:0;z-index:40;background:linear-gradient(180deg,rgba(0,0,0,0.85))}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 2rem;position:relative}
+.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--text)}
+.brand img{height:44px;width:44px;object-fit:contain}
+.nav-links{list-style:none;display:flex;gap:1rem;margin:0;padding:0}
+.nav-links a{color:var(--muted);text-decoration:none;padding:.4rem .6rem;border-radius:6px}
+.nav-links a:hover{color:var(--text);background:var(--glass)}
+.nav-cta{display:none}
+
+/* hamburger/mobilenav toggle */
+.nav-toggle{
+    display:none;
+    background:none;
+    border:none;
+    color:var(--text);
+    font-size:1.6rem;
+    cursor:pointer;
+}
+
+.nav-links.open{
+    display:flex;
+}
+
+/* keep nav-links able to scroll on small screens */
+.nav-links a{white-space:nowrap;}
+
+.hero{display:grid;place-items:center;min-height:66vh;padding:4rem 1rem;
+    background-image: url("./src/bg_hero_image.jpg");
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align:center}
+.hero-inner{background-color: var(--bg); padding: 2rem;}
+.hero-inner h1{font-size:3.2rem;letter-spacing:3px;margin:0;font-weight:700}
+.hero-inner h2{margin:.4rem 0 1rem;font-weight:600;color:var(--accent)}
+.hero-sub{max-width:680px;margin:0 auto 1.6rem;color:var(--muted)}
+.btn{display:inline-block;padding:.75rem 1.2rem;border-radius:10px;font-weight:600;text-decoration:none;cursor:pointer}
+.btn-cta{background:linear-gradient(90deg,var(--primary),color-mix(in srgb, var(--primary) 70%, black));color:var(--text);box-shadow:0 6px 18px rgba(0,0,0,0.45)}
+.btn-primary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text);padding:.5rem .8rem}
+
+.section{padding:1rem 4rem}
+.about p{color:var(--muted);line-height:1.7; width: 500px;}
+.flex{
+    display: flex;
+    justify-content:space-between;
+    height: 400px;
+    width:100%;
+}
+.flex img {
+    width: auto;
+    height: auto;
+    /* ensure image shrinks with container if necessary */
+    max-width: 100%;
+}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.card{background:var(--card);padding:1.6rem;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.45);text-align:center}
+.card-icon{font-size:1.9rem;margin-bottom:.5rem}
+
+.gallery{
+    display: grid;
+    grid-auto-flow: column;
+    overflow-x: auto;
+    gap: 10px;
+}
+/* Scrollbar track (background) */
+.gallery::-webkit-scrollbar {
+    height: 12px;
+}
+
+.gallery::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+/* Scrollbar thumb (draggable part) */
+.gallery::-webkit-scrollbar-thumb {
+    background: var(--accent);  /* uses your gold accent color */
+    border-radius: 10px;
+}
+
+.gallery::-webkit-scrollbar-thumb:hover {
+    background: color-mix(in srgb, var(--accent) 80%, white);
+}
+.thumb{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(0,0,0,0.2));height:450px;border-radius:8px; width: auto;}
+.thumb img{max-height: 450px;padding: 2rem}
+
+#contact{padding: 0; background-color: #222222;}
+.contact-inner{display:flex;gap:2rem;align-items: start;justify-content:space-between;}
+#contact-info{align-self: center;}
+.socials a{font-size:1.4rem;margin-left:.6rem;color:var(--muted);text-decoration:none}
+.socials {align-self: end;}
+
+.site-footer{padding:1.2rem 0;text-align:center;color:var(--muted);border-top:1px solid rgba(255,255,255,0.03)}
+
+@media (max-width:900px){
+    /* shrink container padding on phones */
+    .container{padding:1rem}
+    /* rearrange nav for small screens */
+    .nav-links{display:none;flex-direction:column;position:absolute;top:100%;right:0;background:var(--bg);width:200px;padding:1rem;box-shadow:0 4px 12px rgba(0,0,0,0.4);z-index:45;}
+    .nav-toggle{display:block}
+    .nav-cta{display:inline-block}
+
+    .grid{grid-template-columns:1fr}
+    .gallery{grid-template-columns:repeat(2,1fr)}
+    .hero-inner h1{font-size:2.4rem}
+
+    /* about section stacks vertically and text stretches full width */
+    .flex{flex-direction:column;align-items:center;height:auto}
+    .about p{width:100%}
+
+    /* contact section stacks and centers items */
+    .contact-inner{flex-direction:column;gap:1.5rem;align-items:center;text-align:center}
+    .socials{align-self:center}
+
+    /* smaller gallery thumbs */
+    .thumb{height:auto}
+    .thumb img{max-height:250px;padding:1rem}
+}
+
+@media (max-width:600px){
+    .hero{min-height:50vh;padding:3rem 1rem}
+    .hero-inner h1{font-size:2rem}
+    .hero-inner h2{font-size:1.2rem}
+    .hero-sub{padding:0 1rem}
+    .nav-links{width:100vw;right:0}
+}
+
+/* Utility: apply generated primary color as accent backgrounds */
+.accent-bg{background:var(--primary);color:var(--text)}
+
+/* small focus styles */
+a:focus{outline:2px dashed color-mix(in srgb, var(--primary) 60%, white)}
+
+/* subtle glass cards used across site */
+.glass{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:1rem}
+
