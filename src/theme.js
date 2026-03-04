@@ -48,24 +48,28 @@
   else img.addEventListener('load', setTheme);
 })();
 
-// Hide/show nav on scroll
 (function(){
   const nav = document.querySelector('.site-nav');
   if(!nav) return;
   
   let lastScrollY = 0;
+  const SCROLL_THRESHOLD = 80; // pixels to scroll before nav reacts
   
   window.addEventListener('scroll', () => {
     const currentScrollY = window.scrollY;
+    const scrollDiff = Math.abs(currentScrollY - lastScrollY);
     
-    if(currentScrollY > lastScrollY){
-      // scrolling down
-      nav.classList.add('hidden');
-    } else {
-      // scrolling up
-      nav.classList.remove('hidden');
+    // Only react if scrolled more than threshold
+    if(scrollDiff >= SCROLL_THRESHOLD){
+      if(currentScrollY > lastScrollY){
+        // scrolling down
+        nav.classList.add('hidden');
+      } else {
+        // scrolling up
+        nav.classList.remove('hidden');
+      }
+      
+      lastScrollY = currentScrollY;
     }
-    
-    lastScrollY = currentScrollY;
   });
 })();

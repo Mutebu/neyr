@@ -12,7 +12,7 @@
     box-sizing:border-box
 }
 html{
-    height:100%;
+    scroll-behavior: smooth;
 }
 body{
     min-height:100vh;
@@ -20,7 +20,7 @@ body{
     font-family:'Poppins',system-ui,Arial,sans-serif;
     color:var(--text);
     background-color: #0f0f10;
-    scroll-behavior:smooth;
+    scroll-behavior: smooth;
 }
 
 .container{max-width:1100px;margin:0 auto;padding:2rem}
@@ -30,8 +30,8 @@ body{
 .brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--text)}
 .brand img{height:44px;width:44px;object-fit:contain}
 .nav-links{list-style:none;display:flex;gap:1rem;margin:0;padding:0}
-.nav-links a{color:var(--muted);text-decoration:none;padding:.4rem .6rem;border-radius:6px}
-.nav-links a:hover{color:var(--text);background:var(--glass)}
+.nav-links a, #book_now{color:var(--muted);text-decoration:none;padding:.4rem .6rem;border-radius:6px}
+.nav-links a:hover, #book_now:hover{color:var(--text);background:var(--glass)}
 .nav-cta{display:none}
 
 /* hamburger/mobilenav toggle */
