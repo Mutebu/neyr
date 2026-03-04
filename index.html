@@ -91,7 +91,7 @@
                 </div>
                 <div class="socials">
                     <a href="https://www.instagram.com/isastb2025/" target="_blank" aria-label="Instagram"><img src="./src/instagram.png" alt="instagram icon" width="30" height="30"></a>
-                    <a href="tg://resolve?domain=Isasitab" target ="_blank" aria-label="Telegram"><img src="./src/telegram.png" alt="telegram icon" width="30" height="30"></a>
+                    <a href="https://t.me/Isasitab" target ="_blank" aria-label="Telegram"><img src="./src/telegram.png" alt="telegram icon" width="30" height="30"></a>
                 </div>
             </div>
         </section>
@@ -133,13 +133,7 @@
            we swap the Telegram URI scheme to the web version. */
         function updateLinksForDevice() {
             const isLaptop = window.matchMedia("(min-width: 1024px)").matches;
-            const telegramLink = document.querySelector('.socials a[aria-label="Telegram"]');
             const whatsappLink = document.querySelector('.book_now');
-            if (telegramLink) {
-                telegramLink.href = isLaptop
-                    ? 'https://web.telegram.org/k/#Isasitab'
-                    : 'tg://resolve?domain=Isasitab';
-            }
             if (whatsappLink) {
                 whatsappLink.href = isLaptop
                     ? '#contact'
