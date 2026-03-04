@@ -11,16 +11,21 @@
 *{
     box-sizing:border-box
 }
-html,body{
+html{
     height:100%;
+}
+body{
+    min-height:100vh;
     margin:0;
     font-family:'Poppins',system-ui,Arial,sans-serif;
     color:var(--text);
     background-color: #0f0f10;
+    scroll-behavior:smooth;
 }
 
 .container{max-width:1100px;margin:0 auto;padding:2rem}
-.site-nav{position:sticky;top:0;z-index:40;background:linear-gradient(180deg,rgba(0,0,0,0.85))}
+.site-nav{position:sticky;top:0;z-index:40;background:linear-gradient(180deg,rgba(0,0,0,0.85));transition:transform 0.3s ease}
+.site-nav.hidden{transform:translateY(-100%)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 2rem;position:relative}
 .brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--text)}
 .brand img{height:44px;width:44px;object-fit:contain}

@@ -47,3 +47,25 @@
   if(img.complete){ setTheme(); }
   else img.addEventListener('load', setTheme);
 })();
+
+// Hide/show nav on scroll
+(function(){
+  const nav = document.querySelector('.site-nav');
+  if(!nav) return;
+  
+  let lastScrollY = 0;
+  
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+    
+    if(currentScrollY > lastScrollY){
+      // scrolling down
+      nav.classList.add('hidden');
+    } else {
+      // scrolling up
+      nav.classList.remove('hidden');
+    }
+    
+    lastScrollY = currentScrollY;
+  });
+})();
